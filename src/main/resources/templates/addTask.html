@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>New Task</title>
+</head>
+<body>
+    <h3>Create New Task</h3>
+<!--    <form th:action="@{/process}" th:object="${item}" method="post">-->
+
+<!--        <input type="hidden" th:field="*{id}"/>-->
+
+<!--        Task title: <input type="text" th:field="*{name}"/>-->
+<!--        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br>-->
+
+<!--        When is this due?: <input type="text" th:field="*{date}"/>-->
+<!--        <span th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span><br>-->
+
+<!--        Priority: <input type="radio" th:field="*{priority}" th:value="high"/>high<input type="radio" th:field="*{priority}" th:value="low" />low-->
+<!--        <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"></span><br>-->
+
+<!--        <input type="submit" value="Submit"/>  -->
+<!--    </form>-->
+
+<form th:action="@{/process}" th:object="${tdl}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <input type="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+
+    <input type="date" th:field="*{date}"/>
+    <span th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span>
+
+    <input type="radio" th:field="*{priority}" value="high" />high <input type="radio" th:field="*{priority}" value="low"/>low
+    <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}"></span>
+
+    <input type="submit" value="Submit"/>
+
+
+</form>
+</body>
+</html>
