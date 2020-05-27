@@ -18,7 +18,7 @@ public class Tdl {
     private long id;
 
     @NotNull
-    @Size(min=1, max=12)
+    @Size(min=1, max=24)
     private String name;
 
     @NotNull
@@ -28,7 +28,14 @@ public class Tdl {
     @NotNull
     private String priority;
 
+    public Tdl() {
+    }
 
+    public Tdl(@Size(min = 1, max = 24) String name, LocalDate date, String priority) {
+        this.name = name;
+        this.date = date;
+        this.priority = priority;
+    }
 
     public long getId() {
         return id;
